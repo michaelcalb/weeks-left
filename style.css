@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Quicksand:wght@300..700&display=swap');
+
+body {
+    background: rgb(63, 59, 80);
+    color: white;
+    font-family: "Quicksand", sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+header > h1 {
+    font-size: 3em;
+    margin: 40px 0px 10px 0px;
+}
+
+hr {
+    width: 500px;
+    border-color: rgb(99, 96, 110);
+    border-style: solid;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 1000vh;
+}
+
+#weeks-input > p {
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
+#weeks-input > input {
+    background-color: rgb(40, 36, 54);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(108, 102, 129);
+    border-radius: 5px;
+    width: 120px;
+    height: 30px;
+    color: white;
+    font-family: "Quicksand", sans-serif;
+    text-align: center;
+}
+
+#weeks-info {
+    border: 5px solid rgb(154, 146, 182);
+    border-radius: 15px;
+    box-shadow: rgb(40, 36, 54) 0px 0px 15px;
+    padding: 25px;
+    margin-top: 75px;
+    width: 450px;
+}
+
+#weeks-info {
+    display: none;
+}
+
+#weeksinfonote {
+    color: rgb(149, 145, 167);
+}
+
+#weeksinfonote > abbr {
+    text-decoration: underline;
+}
+
+#weeks-table {
+    margin-top: 50px;
+    max-width: 1500px;
+}
+
+#weeks-table input {
+    height: 20px;
+    width: 20px;
+}
+
+footer {
+    width: 100vw;
+    background-image: linear-gradient(to top, rgb(63, 59, 80) 50%, rgba(255, 255, 255, 0));
+    position: sticky;
+    bottom: 0px;
+    text-align: center;
+    max-width: 100%;
+}
+
+footer abbr {
+    text-decoration: none;
+    border: none;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(255, 155, 255);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
