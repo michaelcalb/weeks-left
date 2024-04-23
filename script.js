@@ -3,7 +3,6 @@ function show_weeks() {
     let weeksinfo = document.getElementById("weeks-info")
 
     weekstable.innerHTML = ''
-    weeksinfo.style.display = 'block'
     
     let weeks_user_input = document.getElementById("weeks-input-date")
 
@@ -20,6 +19,8 @@ function show_weeks() {
         alert("Invalid date entered!")
         return
     }
+
+    weeksinfo.style.display = 'block'
 
     weeksinfo.innerHTML = `<p weeksinfonote>Weeks lived: <strong>${ageweeks}</strong> of 3810*</p>`
     weeksinfo.innerHTML += `<p id="weeksinfonote">*Based on the world's average <abbr title="around 73 years">life expectancy</abbr>.</p>`
