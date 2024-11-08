@@ -19,7 +19,8 @@ header > h1 {
 }
 
 hr {
-    width: 500px;
+    max-width: 500px;
+    width: 90vw;
     border-color: rgb(99, 96, 110);
     border-style: solid;
 }
@@ -55,7 +56,8 @@ main {
     box-shadow: rgb(40, 36, 54) 0px 0px 15px;
     padding: 25px;
     margin-top: 75px;
-    width: 450px;
+    max-width: 450px;
+    width: 80vw;
 }
 
 #weeks-info {
@@ -72,7 +74,9 @@ main {
 
 #weeks-table {
     margin-top: 50px;
-    max-width: 1500px;
+    width: 80vw;
+    max-width: 1000px;
+    word-wrap: break-word;
 }
 
 #weeks-table input {

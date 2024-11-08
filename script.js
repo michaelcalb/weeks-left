@@ -1,4 +1,4 @@
-function show_weeks() {
+function showWeeks() {
     let weekstable = document.getElementById("weeks-table")
     let weeksinfo = document.getElementById("weeks-info")
 
@@ -16,7 +16,7 @@ function show_weeks() {
     let ageweeks = Math.floor(agedays/7)
 
     if (isNaN(weeks) || currentweek < weeks) {
-        alert("Invalid date entered!")
+        alert("Invalid date.")
         return
     }
 
@@ -28,21 +28,25 @@ function show_weeks() {
     let i = 0
 
     for (i; i < ageweeks; i++) {
-        let weekscheckbox = document.createElement("input");
+
+        weekstable.innerHTML += '☑️'
+        /* let weekscheckbox = document.createElement("input");
         weekscheckbox.setAttribute("type", "checkbox");
         weekscheckbox.setAttribute("class", "week");
         weekscheckbox.checked = true;
-        weekstable.appendChild(weekscheckbox);
+        weekstable.appendChild(weekscheckbox); */
     }
 
     for (i; i < 3810; i++) {
-        let weekscheckbox = document.createElement("input");
+
+        weekstable.innerHTML += '⬜'
+        /* let weekscheckbox = document.createElement("input");
         weekscheckbox.setAttribute("type", "checkbox");
         weekscheckbox.setAttribute("class", "week");
         weekscheckbox.setAttribute("disabled", "true");
         weekscheckbox.checked = false;
-        weekstable.appendChild(weekscheckbox);
+        weekstable.appendChild(weekscheckbox); */
     }
 }
 
-// Probably screwed up the math rounding the date values, but it should just have lost a day or so in the math
+// Probably screwed up the math rounding the date values, but it should just have lost a day or so
