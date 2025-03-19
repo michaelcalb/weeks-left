@@ -5,27 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weeks Left</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png" type="image/png">
 </head>
 <body>
-    <header>
-        <h1>Weeks Left</h1>
-        <p>I hope you don't get disappointed</p>
-    </header>
-    <hr>
-    <main>
-        <div id="weeks-input">
-            <p>When were you born?</p>
-            <br>
-            <input type="date" name="weeks" id="weeks-input-date">
-            <input type="button" value="Confirm" onclick="showWeeks()">
-        </div>
-        <div id="weeks-info"></div>
-        <div id="weeks-table"> <!--If you are really curious to test this out, you can easily change the function on js to add more boxes by inspecting the page, but it may breake some stuff.-->
-        </div>
-    </main>
-    <footer>
-        <p>Made with <abbr title="Love and lots of coffee!">&#x2764</abbr> by <a target="_blank" href="https://github.com/michaelcalb">Michas</a></p>
-      </footer>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Weeks Left</h1>
+            <p class="subtitle">I hope you don't get disappointed</p>
+        </header>
+        <hr class="separator">
+        <main class="main">
+            <div id="weeks-input-container">
+                <label for="birthdate-input">When were you born?</label>
+                <input type="date" id="birthdate-input">
+                <input type="button" value="Confirm" id="calc-weeks-btn">
+            </div>
+            <div id="weeks-info">
+                <p weeksinfonote>Weeks lived: <span id="weeks-lived">${ageWeeks}</span> of 3810*</p>
+                <p id="weeksinfonote">*Based on the world's average <abbr title="around 73 years">life expectancy</abbr>.</p>
+            </div>
+            <div id="weeks-table"></div>
+        </main>
+        <footer>
+            <div class="michas">Made with <abbr title="Love and lots of coffee!">&#x2764</abbr> by <a target="_blank" href="https://github.com/michaelcalb">Michas</a></div>
+        </footer>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,52 +1,46 @@
-function showWeeks() {
-    let weekstable = document.getElementById("weeks-table")
-    let weeksinfo = document.getElementById("weeks-info")
+const weeksInfo = document.getElementById('weeks-info')
+const weeksTable = document.getElementById('weeks-table')
+const weeksLived = document.getElementById('weeks-lived')
+const totalWeeks = 3810 // reality check
 
-    weekstable.innerHTML = ''
+function calcWeeks(currentTime, birthdateTime) { 
+    const ageSeconds = currentTime - birthdateTime
+    const ageDays = Math.floor(ageSeconds / 86400000)
+    const ageWeeks = Math.floor(ageDays / 7)
     
-    let weeks_user_input = document.getElementById("weeks-input-date")
-
-    let weeks_user = weeks_user_input.value
-
-    let weeks = new Date(weeks_user).getTime()
-    let currentweek = new Date().getTime()
-
-    let ageseconds = currentweek - weeks
-    let agedays = Math.floor(ageseconds/86400000)
-    let ageweeks = Math.floor(agedays/7)
-
-    if (isNaN(weeks) || currentweek < weeks) {
-        alert("Invalid date.")
-        return
-    }
-
-    weeksinfo.style.display = 'block'
-
-    weeksinfo.innerHTML = `<p weeksinfonote>Weeks lived: <strong>${ageweeks}</strong> of 3810*</p>`
-    weeksinfo.innerHTML += `<p id="weeksinfonote">*Based on the world's average <abbr title="around 73 years">life expectancy</abbr>.</p>`
-
+    weeksLived.textContent = ageWeeks
+    weeksInfo.style.display = 'block'
+    
     let i = 0
-
-    for (i; i < ageweeks; i++) {
-
-        weekstable.innerHTML += '☑️'
-        /* let weekscheckbox = document.createElement("input");
-        weekscheckbox.setAttribute("type", "checkbox");
-        weekscheckbox.setAttribute("class", "week");
-        weekscheckbox.checked = true;
-        weekstable.appendChild(weekscheckbox); */
+    weeksTable.innerHTML = ''
+    for (i; i < ageWeeks; i++) {
+        weeksTable.textContent += '☑️'
     }
-
-    for (i; i < 3810; i++) {
-
-        weekstable.innerHTML += '⬜'
-        /* let weekscheckbox = document.createElement("input");
-        weekscheckbox.setAttribute("type", "checkbox");
-        weekscheckbox.setAttribute("class", "week");
-        weekscheckbox.setAttribute("disabled", "true");
-        weekscheckbox.checked = false;
-        weekstable.appendChild(weekscheckbox); */
+    for (i; i < totalWeeks; i++) {
+        weeksTable.textContent += '⬜'
     }
 }
 
-// Probably screwed up the math rounding the date values, but it should just have lost a day or so
+const calcWeeksBtn = document.getElementById('calc-weeks-btn')
+const birthdateInput = document.getElementById('birthdate-input')
+
+calcWeeksBtn.addEventListener('click', () => {
+    const birthdateValue = birthdateInput.value
+    const birthdateTime = new Date(birthdateValue).getTime()
+    const currentTime = new Date().getTime()
+
+    if (isNaN(birthdateTime) || currentTime < birthdateTime) {
+        alert('Invalid date!')
+        birthdateInput.focus()
+        return
+    } else {
+        calcWeeks(currentTime, birthdateTime)
+    }
+})
+
+// making this since im not using forms
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        calcWeeksBtn.click()
+    }
+})

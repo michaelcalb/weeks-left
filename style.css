@@ -1,35 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Quicksand:wght@300..700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background: rgb(63, 59, 80);
     color: white;
     font-family: "Quicksand", sans-serif;
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+    justify-content: center;
+}
+
+.container {
+    width: 800px;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
 }
 
-header > h1 {
+.header {
+    text-align: center;
+}
+
+.title {
     font-size: 3em;
-    margin: 40px 0px 10px 0px;
 }
 
-hr {
+.subtitle {
+    color: gainsboro;
+    font-size: 1em;
+}
+
+.separator {
     max-width: 500px;
     width: 90vw;
     border-color: rgb(99, 96, 110);
     border-style: solid;
 }
 
-main {
+.main {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 1000vh;
 }
 
 #weeks-input > p {
@@ -85,12 +104,9 @@ main {
 }
 
 footer {
-    width: 100vw;
+    width: 90vw;
     background-image: linear-gradient(to top, rgb(63, 59, 80) 50%, rgba(255, 255, 255, 0));
-    position: sticky;
-    bottom: 0px;
     text-align: center;
-    max-width: 100%;
 }
 
 footer abbr {
