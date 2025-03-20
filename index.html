@@ -15,19 +15,25 @@
         </header>
         <hr class="separator">
         <main class="main">
-            <div id="weeks-input-container">
-                <label for="birthdate-input">When were you born?</label>
-                <input type="date" id="birthdate-input">
-                <input type="button" value="Confirm" id="calc-weeks-btn">
+            <div class="weeks-input-container">
+                <label for="birthdate-input" class="birthdate-label">When were you born?</label>
+                <div class="input-box">
+                    <input type="date" id="birthdate-input">
+                    <input type="button" value="Confirm" id="calc-weeks-btn">
+                </div>
             </div>
             <div id="weeks-info">
-                <p weeksinfonote>Weeks lived: <span id="weeks-lived">${ageWeeks}</span> of 3810*</p>
-                <p id="weeksinfonote">*Based on the world's average <abbr title="around 73 years">life expectancy</abbr>.</p>
+                <p>Weeks lived: <span id="weeks-lived">${ageWeeks}</span> of 3810*</p>
+                <div id="life-bar-box">
+                    <span id="life-percentage">0%</span>
+                    <span id="life-bar"><span id="life-bar-progress"></span></span>
+                </div>
+                <p id="weeks-note">*Based on the world's average <abbr title="around 73 years">life expectancy</abbr>.</p>
             </div>
             <div id="weeks-table"></div>
         </main>
         <footer>
-            <div class="michas">Made with <abbr title="Love and lots of coffee!">&#x2764</abbr> by <a target="_blank" href="https://github.com/michaelcalb">Michas</a></div>
+            <div class="michas">Made with <abbr title="Love, free time and coffee!">&#x2764</abbr> by <a target="_blank" href="https://github.com/michaelcalb">Michas</a></div>
         </footer>
     </div>
     <script src="script.js"></script>

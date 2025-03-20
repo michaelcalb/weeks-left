@@ -4,12 +4,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+*::selection {
+    background-color: blueviolet;
 }
 
 body {
     background: rgb(63, 59, 80);
     color: white;
-    font-family: "Quicksand", sans-serif;
     display: flex;
     justify-content: center;
 }
@@ -20,8 +24,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 0;
-    gap: 20px;
+    padding: 25px 0;
+    gap: 25px;
 }
 
 .header {
@@ -49,58 +53,124 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
-#weeks-input > p {
-    margin-top: 50px;
-    margin-bottom: 0;
-}
-
-#weeks-input > input {
+.weeks-input-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
     background-color: rgb(40, 36, 54);
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(108, 102, 129);
-    border-radius: 5px;
-    width: 120px;
-    height: 30px;
-    color: white;
-    font-family: "Quicksand", sans-serif;
+    padding: 15px;
+    border-radius: 15px;
     text-align: center;
+    justify-content: space-between;
+}
+
+.birthdate-label {
+    font-size: 20px;
+}
+
+.input-box {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#birthdate-input {
+    background-color: rgb(63, 59, 80);
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert();
+    cursor: pointer;
+}
+
+#birthdate-input:focus {
+    outline: none;
+}
+
+#calc-weeks-btn {
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid rgb(63, 59, 80);
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#calc-weeks-btn:hover {
+    background-color: rgb(63, 59, 80);
+    transition: .2s;
 }
 
 #weeks-info {
     border: 5px solid rgb(154, 146, 182);
     border-radius: 15px;
     box-shadow: rgb(40, 36, 54) 0px 0px 15px;
-    padding: 25px;
-    margin-top: 75px;
-    max-width: 450px;
-    width: 80vw;
+    padding: 15px;
+    font-size: 20px;
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #weeks-info {
     display: none;
 }
 
-#weeksinfonote {
-    color: rgb(149, 145, 167);
+#weeks-lived {
+    font-weight: bold;
 }
 
-#weeksinfonote > abbr {
+#life-bar-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#life-bar {
+    display: flex;
+    border: 1px solid rgb(43, 255, 0);
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgb(154, 146, 182);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+#life-bar-progress {
+    background-color: rgb(154, 146, 182);
+    height: 100%;
+    width: 0;
+}
+
+#weeks-note {
+    color: rgb(149, 145, 167);
+    font-size: 15px;
+}
+
+#weeks-note > abbr {
     text-decoration: underline;
 }
 
 #weeks-table {
-    margin-top: 50px;
-    width: 80vw;
-    max-width: 1000px;
+    width: 100%;
+    font-size: 11px;
     word-wrap: break-word;
-}
-
-#weeks-table input {
-    height: 20px;
-    width: 20px;
+    text-align: center;
 }
 
 footer {
