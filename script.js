@@ -1,18 +1,23 @@
 const weeksInfo = document.getElementById('weeks-info')
 const weeksTable = document.getElementById('weeks-table')
 const weeksLived = document.getElementById('weeks-lived')
+const weeksTotal = document.getElementById('weeks-total')
+const weeksLeft = document.getElementById('weeks-left')
 const lifePercentage = document.getElementById('life-percentage')
 const lifeBarProgress = document.getElementById('life-bar-progress')
-const totalWeeks = 3810 // reality check
+const avgWeeks = 3806 // reality check
 
 function calcWeeks(currentTime, birthdateTime) { 
     const ageSeconds = currentTime - birthdateTime
     const ageDays = Math.floor(ageSeconds / 86400000)
     const ageWeeks = Math.floor(ageDays / 7)
-    const agePercentage = Math.round(ageWeeks / totalWeeks * 100)
+    const agePercentage = Math.round(ageWeeks / avgWeeks * 100)
     
     weeksLived.textContent = ageWeeks
+    weeksTotal.textContent = avgWeeks
+    weeksLeft.textContent = avgWeeks - ageWeeks
     weeksInfo.style.display = 'flex'
+    weeksTable.style.display = 'block'
     lifePercentage.textContent = `${agePercentage}%`
     lifeBarProgress.style.width = `${agePercentage}%`
     
@@ -21,7 +26,7 @@ function calcWeeks(currentTime, birthdateTime) {
     for (i; i < ageWeeks; i++) {
         weeksTable.textContent += '☑️'
     }
-    for (i; i < totalWeeks; i++) {
+    for (i; i < avgWeeks; i++) {
         weeksTable.textContent += '⬜'
     }
 }

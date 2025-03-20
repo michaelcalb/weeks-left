@@ -15,25 +15,31 @@
         </header>
         <hr class="separator">
         <main class="main">
-            <div class="weeks-input-container">
-                <label for="birthdate-input" class="birthdate-label">When were you born?</label>
-                <div class="input-box">
-                    <input type="date" id="birthdate-input">
-                    <input type="button" value="Confirm" id="calc-weeks-btn">
+            <div class="weeks-input-info">
+                <div class="weeks-input">
+                    <label for="birthdate-input" class="birthdate-label">When were you born?</label>
+                    <div class="input-box">
+                        <input type="date" id="birthdate-input">
+                        <input type="button" value="Confirm" id="calc-weeks-btn">
+                    </div>
+                </div>
+                <div id="weeks-info">
+                    <div class="weeks-stats">
+                        <p class="weeks-lived">Weeks lived: <span id="weeks-lived"></span> of <span id="weeks-total">3810</span>*</p>
+                        <p class="weeks-left">(<span id="weeks-left"></span> weeks to go)</p>
+                    </div>
+                    <div id="life-bar-box">
+                        <span id="life-percentage"></span>
+                        <span id="life-bar"><span id="life-bar-progress"></span></span>
+                    </div>
+                    <p id="weeks-note">*Based on the world's average <abbr title="around 73 years">life expectancy</abbr>.</p>
                 </div>
             </div>
-            <div id="weeks-info">
-                <p>Weeks lived: <span id="weeks-lived">${ageWeeks}</span> of 3810*</p>
-                <div id="life-bar-box">
-                    <span id="life-percentage">0%</span>
-                    <span id="life-bar"><span id="life-bar-progress"></span></span>
-                </div>
-                <p id="weeks-note">*Based on the world's average <abbr title="around 73 years">life expectancy</abbr>.</p>
+            <div id="weeks-table">
             </div>
-            <div id="weeks-table"></div>
         </main>
-        <footer>
-            <div class="michas">Made with <abbr title="Love, free time and coffee!">&#x2764</abbr> by <a target="_blank" href="https://github.com/michaelcalb">Michas</a></div>
+        <footer class="footer">
+            <div class="michas">Made with <abbr title="Love, free time and coffee!" class="made-with-love">&#x2764</abbr> by <a target="_blank" href="https://github.com/michaelcalb" class="github-link">Michas</a></div>
         </footer>
     </div>
     <script src="script.js"></script>
